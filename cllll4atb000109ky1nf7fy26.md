@@ -658,4 +658,6 @@ for e in range(epoch): # first iterate number of epoch
 
 ---
 
+Note: This article is not fully complete!
+
 Thanks for your time reading this article, I hope you found some value If you have any questions or suggestions in this article comment now below or you can use my [Twitter](https://twitter.com/hi_sushanta_) or [Linkedin](https://www.linkedin.com/in/sushanta-das-/) profile to directly message me. I am always looking to help someone who is curious about learning. Never think asking questions is a stupid thing.
