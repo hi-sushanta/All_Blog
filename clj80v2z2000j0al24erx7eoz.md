@@ -157,7 +157,7 @@ Everything in deep learning comes from big data. Without data, you can't build a
 
 Here is a framework you remember all the time when you build any model deep learning!
 
-* Load data { data can be any format - ***text, images, videos, etc..*** } \*\*\*\*\*\*and turn tensor format.
+* Load data { data can be any format - ***text, images, videos, etc..*** } and turn tensor format.
     
 * Build your own model or use a pre-trained model. You can find pre-trained models in this place { [***PyTorch Hub***](https://pytorch.org/hub/)***,*** [***TensorFlow Hub***](https://www.tensorflow.org/hub)***,*** [***Hugging Face***](https://huggingface.co/models) } or you search your own. The benefit of using a pre-trained model is, this model builds researchers in this field.
     
@@ -274,7 +274,7 @@ The training loop is where the model learns the relationship between the **featu
 
 ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1693701230252/0c21e27f-6ca7-40a4-a6ab-36ae604cdfa7.png align="center")
 
-The training loop is complete, all you need is some $data,$$ \\ neural\\ network \\ $ and $loss \\ function $$(\\ell (. , .))$ work our linear regression model. Enough time waste let’s make some data!
+The training loop is complete, all you need is some *data*, *neural network* and *loss function* $$(\\ell (. , .))$ work our linear regression model. Enough time waste let’s make some data!
 
 ```python
 import seaborn as sns
@@ -329,9 +329,9 @@ x is a vector of all our $d$ features ( in this case, $d = 1$ ) and the matrix $
 
 Note : ~ One thing you notice this linear function is not complete. If $\\ x = 0 $ , then $\\ f(x)=0$. One more thing add this function $bias \\ term \\ b$ that has no interaction with *$x$ .* Luckily for us, PyTorch has module $\\ nn. Linear (d,\\ C)$ This module creates linear layer $\\ d \\ is \\ input \\ C \\ output$ exactly what I want.
 
-$$f ( x ) = \mathbf{ x \ }^T \ \ \ W^d,^ C +\ b $$
+$$f ( x ) = \mathbf{ x \ }^T \ \ \ W^d,^ C +\ b$$
 
- ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1693701632155/c9db2a88-4d6b-4ca4-b4b2-ae70c7473a31.png align="center")
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1693701632155/c9db2a88-4d6b-4ca4-b4b2-ae70c7473a31.png align="center")
 
 ## Defining The Loss Function
 
@@ -347,15 +347,15 @@ Note ⭐ — One of the key points is to remember always try to decrease loss $\
 
 Wright way decrease loss $\\ ℓ (ŷ , y)\\ = \\ \\downarrow\\$ in model $\\downarrow$
 
-$$\ |y - ŷ| = 21 \downarrow $$
+$$\ |y - ŷ| = 21 \downarrow$$
 
- $$\ |y - ŷ| = 9 \downarrow $$
+$$\ |y - ŷ| = 9 \downarrow$$
 
- $$\ |y - ŷ| = 3 \downarrow $$
+$$\ |y - ŷ| = 3 \downarrow$$
 
- $$\ |y - ŷ| = 1 \downarrow $$
+$$\ |y - ŷ| = 1 \downarrow$$
 
- $$[]$$
+$$[]$$
 
 See below one more example,
 
@@ -363,13 +363,13 @@ This is not good for our model because it increases $\\ ℓ (ŷ , y)\\ =\\ \\upa
 
 $$\ |y - ŷ| = 21 \downarrow$$
 
- $$ \ |y - ŷ| = 9 \downarrow$$
+$$\ |y - ŷ| = 9 \downarrow$$
 
- $$ \ |y - ŷ| = 13 \uparrow $$
+$$\ |y - ŷ| = 13 \uparrow$$
 
- $$\ |y - ŷ| = 27 \uparrow $$
+$$\ |y - ŷ| = 27 \uparrow$$
 
- $$[]$$
+$$[]$$
 
 Less is better — for our model $f( \\ x \\ )$, Here is the most commonly used loss function in regression problems!
 
@@ -457,15 +457,15 @@ import torch.nn as nn
 import torch.nn.functional as F
 ```
 
-$$Myth \ [] \downarrow [] $$
+$$Myth \ 🔥 \downarrow 😭$$
 
- $$\frac{\partial J}{\partial \mathbf{W}^{(1)}}= \text{prod}\left(\frac{\partial J}{\partial \mathbf{z}}, \frac{\partial \mathbf{z}}{\partial \mathbf{W}^{(1)}}\right) + \text{prod}\left(\frac{\partial J}{\partial s}, \frac{\partial s}{\partial \mathbf{W}^{(1)}}\right)= \frac{\partial J}{\partial \mathbf{z}} \mathbf{x}^\top + \lambda \mathbf{W}^{(1)} \$$
+ $$ \frac{\partial J}{\partial \mathbf{W}^{(1)}}= \text{prod}\left(\frac{\partial J}{\partial \mathbf{z}}, \frac{\partial \mathbf{z}}{\partial \mathbf{W}^{(1)}}\right) + \text{prod}\left(\frac{\partial J}{\partial s}, \frac{\partial s}{\partial \mathbf{W}^{(1)}}\right)= \frac{\partial J}{\partial \mathbf{z}} \mathbf{x}^\top + \lambda \mathbf{W}^{(1)} \$$
 
 Myth 🔥 — Don’t need a math background to understand deep learning is wrong. Math is the foundation building block in deep learning research. No research comes in any field without using Math because it’s a 'Universal🪄' tool. So when someone says you don’t need math to understand this field, asked this type of person what is meaning 'Neural Network'?
 
 ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1693702980249/8ef6e729-6fd1-452e-be5c-ddc9edd6b68a.png align="center")
 
-Learning framework like ( PyTorch, TensorFlow, MxNeT, Jax etc.) or learning Neural Network is two different things. So focus on what is the true meaning of neural network 🔎 and solve our real-world problem. Don't focus on trending things 👻.
+Learning framework like ( ***PyTorch, TensorFlow, MxNeT, Jax etc***.) or learning ***Neural Network*** is two different things. So focus on what is the true meaning of neural network 🔎 and solve our real-world problem. Don't focus on trending things 👻.
 
 ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1693703025253/e8d274b0-dab5-4024-a504-2707b23bd368.png align="center")
 
@@ -491,7 +491,7 @@ $$\begin{equation} y = f(x) = \sigma \left( \sum_{i=1}^n w_i x_i + b \right) \en
 </ul>
 </aside>
 
-Note :~ The name feed-forward because every output from one layer is connected to the other layer which means each layer has one input and one output and progresses sequentially. Fully Connected because each layer input has connected the previous layer. See the below image so you understand better.
+Note :~ The name [feed-forward](https://brilliant.org/wiki/feedforward-neural-networks/) because every output from one layer is connected to the other layer which means each layer has one input and one output and progresses sequentially. **Fully Connected** because each layer input has connected the previous layer. See the below image so you understand better.
 
 ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1693703177133/d9732a02-7925-4366-a9db-cf989d6b264c.png align="center")
 
@@ -518,7 +518,7 @@ $$f ( x ) = \mathbf{ x \ }^T W^d,^ C\$$
 
 When adding a second layer with a new matrix this notation is like this!👇🏻
 
-$$f(\boldsymbol{x}) = \boldsymbol{x}^\top \boldsymbol{W}^{d \times n}_{(h_1)} \boldsymbol{W}^{n \times C}_{(\text{out})}$$
+$$f({x}) = {x}^\top {W}^{d \times n}_{(h_1)} {W}^{n \times C}_{(\text{out})}$$
 
 ### **Simple Definition of Neural Networks**
 
@@ -539,26 +539,26 @@ $$nn = (i)\ A \ (ii) \ W \ (ii) \ B$$
 
 $$f(x) = {\large \frac{1}{1+e^{-x}}}$$
 
-* Tanh used to predict output node is between 1 and -1.
+* **Tanh** used to predict output node is between 1 and -1.
     
 
 $$f(x) = {\large \frac{e^{x} - e^{-x}}{e^{x} + e^{-x}}}$$
 
-* ReLU set our output node 0 if function result is negative
+* **ReLU** set our output node 0 if function result is negative
     
 
 $$f(x)= {\small \begin{cases} 0, & \text{if } x < 0\\ x, & \text{if } x\geq 0\\ \end{cases}}$$
 
-* Weights ( W ) and Bias ( b )
+* **Weights** ( W ) and Bias ( b )
     
 
 $$Wij = weight(i, j)$$
 
-Note :~ Wij denotes the weight connecting the i th neuron in the preceding layer to the j th neuron in the current layer. weight is a function that takes two inputs, i and j, and returns the weight between the two neurons.
+**Note** :~ ***Wij*** denotes the weight connecting the ***i*** th neuron in the preceding layer to the ***j*** th neuron in the current layer. `weight` is a function that takes two inputs, `i` and `j`, and returns the weight between the two neurons.
 
-$$Weight: W or\ W_{ij} \quad Bias: b\ or\ b_j $$
+$$Weight: W or\ W_{ij} \quad Bias: b\ or\ b_j$$
 
- $$bj = \text{bias term associated with the jth neuron in a layer}$$
+$$bj = \text{bias term associated with the jth neuron in a layer}$$
 
 ### Building A Fully Connected Network In PyTorch
 
@@ -574,7 +574,7 @@ model = nn.Sequential(
 simple_network(model, loss_func, training_loader)
 ```
 
-I use \*[\***nn. Sequential**](https://pytorch.org/docs/stable/generated/torch.nn.Sequential.html) method defines the model, it’s a quick method to define any model in PyTorch.
+I use [**nn. Sequential**](https://pytorch.org/docs/stable/generated/torch.nn.Sequential.html) method defines the model, it’s a quick method to define any model in PyTorch.
 
 **Note** — The model is a sequential model, which means that the layers are arranged in a sequence, and the output of one layer is passed as input to the next layer.
 
@@ -600,13 +600,11 @@ class MyModel(nn.Module):
 model = MyModel()
 ```
 
-In this example, I've created a custom class called `MyModel` that inherits from `nn.Module`. Inside the `**__init__**` method, I've defined the hidden layer and output layer as instance variables. The `forward` method takes an input tensor `**x**` and passes it through the hidden and output layers sequentially. Finally, I instantiated the model by creating an object of the `MyModel`class.
+In this example, I've created a custom class called `MyModel` that inherits from `nn.Module`. Inside the `__init__` method, I've defined the hidden layer and output layer as instance variables. The `forward` method takes an input tensor `x` and passes it through the hidden and output layers sequentially. Finally, I instantiated the model by creating an object of the `MyModel`class.
 
-In this example, I've created a custom class called `MyModel` that inherits from `nn.Module`. Inside the `**__init__**` method, I've defined the hidden layer and output layer as instance variables. The `forward` method takes an input tensor `**x**` and passes it through the hidden and output layers sequentially. Finally, I instantiated the model by creating an object of the `MyModel`class.
+Don't be confused. If you know [Python classes](https://docs.python.org/3/tutorial/classes.html), this will be easy to understand. I use this method most of the time to define models because it's easy and user-friendly once you get the hang of it.
 
-Don't be confused. If you know [Python classes,](https://docs.python.org/3/tutorial/classes.html) this will be easy to understand. I use this method most of the time to define models because it's easy and user-friendly once you get the hang of it.
-
-Remember \*\*\*\*— This model has one input **( X )** and one output **( Y )**, and a single hidden layer with 10 neurons.
+Remember — This model has one input **( X )** and one output **( Y )**, and a single hidden layer with 10 neurons.
 
 Check Model Predication📊 🤖
 
@@ -676,7 +674,9 @@ Before we get into writing code, let's look at the general architecture of a cla
 
 ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1693704241174/0dbfffad-faae-47b9-92e8-3d6e97fd4d15.png align="center")
 
-> Recall what is classfication?
+<aside>
+✨ Recall what is classfication?
+</aside>
 
 ### What is a classficiation problem?
 
@@ -713,7 +713,7 @@ This small line of code converts our classfication\_dataset PyTorch DataLoader o
 
 The dataset is ready, and I convert *the* ***classfication\_dataset*** PyTorch data loader object. So my next step is to define our linear classification model.
 
-Note 🔥— We have two features and two output $(2x \* 2y)$
+$$Note 🔥— We \space have \space two \space features \space and \space two \space output\space (2x * 2y)$$
 
 ```python
 input_features = 2 
@@ -781,4 +781,312 @@ One thing to notice this time takes time to model train ( in my case 40 seconds 
 
 Let’s see side by side the previous model and the current model I built and see the difference!
 
-**Article Progress**
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1693786211093/70248aa2-0e5c-42f5-b580-bdded58aa9cd.png align="center")
+
+You can see the neural network I built ( model 2 ) performance is outstanding compared to model 1 because it’s separate two classes ( blue, and red ).
+
+Note🔥— Deep learning is all about an experiment, experiment, experiment🧑🏻‍🔬 , one solution does not work all the time because every human understands things in different ways 👨🏻‍🎨. So start small changes ( **Hyperparameters** 〰️) and slowly improve when it needs, never change big the first time ( experiment, experiment, experiment🧑🏻‍🔬 ).
+
+## Better Training Code
+
+At this moment we know how to write code regression and classification types of problem in PyTorch! The best thing about this, using this type of framework. If you know some basic things about how deep learning works you can solve problems because lots of functions already have, 'just import and use'. It’s cool ✨
+
+But this time we need to learn how to improve the model training. Because our goal is to improve our model accuracy so we need this tool { **experiment, experiment, experiment**🧑🏻‍🔬 }. Here are the two things you notice when i build a model 🤖
+
+* Problem One 📌 — I am training and evaluating( check model accuracy 💯 ) the same data, this is not the correct way to do that. Because sometimes models memorize training data ( training time ) so we need our dataset 3 parts!🍕. For example, if you have a 1 million image dataset you can split three parts, see below.
+    
+* **Training set** — 600,000 ( 60% ) of the images.
+    
+* **Validation set** — 200,000 ( 20% ) of the images.
+    
+* **Testing set** — 200,000 ( 20% ) of the images
+    
+
+Here is an example code below in PyTorch, how you split the dataset.🔥
+
+$$(i)\ Training\ Set \ (ii) \ Validation\ Set \ (iii) \ Testing \ Set$$
+
+```python
+import torch
+from torch.utils.data import random_split
+
+# Create a dataset object.
+dataset = torch.utils.data.ImageFolder("data")
+
+# Get the number of images in the dataset.
+num_images = len(dataset)
+
+# Split the dataset into training, validation, and testing sets.
+train_set, val_set, test_set = random_split(dataset, [int(0.6 * num_images), int(0.2 * num_images), int(0.2 * num_images)])
+
+# Print the number of images in each set.
+print("Number of training images:", len(train_set))
+print("Number of validation images:", len(val_set))
+print("Number of testing images:", len(test_set))
+
+
+""" 
+** Output ***
+Number of training images: 600000
+Number of validation images: 200000
+Number of testing images: 200000
+
+"""
+```
+
+Once you have split the dataset, you can train your model on the training set, evaluate the model's performance on the validation set, and test the model's performance on the testing set.
+
+Once you finish the split the dataset, now you can train the model on the training set.
+
+$$\begin{align*}\text{Training set} &= (X_\text{train}, y_\text{train}) \\\text{Validation set} &= (X_\text{valid}, y_\text{valid}) \\\text{Testing set} &= (X_\text{test}, y_\text{test})\end{align*}$$
+
+## How to Ensure Your Model's Accuracy
+
+We are improving our training technique to better align with pragmatic scenarios. This includes a training stage, where we update the model's parameters, and a testing stage, where we only evaluate the model's performance. It is important to guarantee that the model's parameters are not changed during the testing stage.
+
+Note🔥— If you don’t understand any code meaning: just copy and paste the **‘**[**ChatGPT**](https://chat.openai.com/) **or** [**Bard**](https://bard.google.com/)**’** asked meaning, and they guide you. Use this type of AI tool in your education. Remember everyone doesn’t know anything , first time everything it’s hard and confusing but after it’s easy and fun.
+
+$$Here \ is \ the \ code\\ 👇🏻$$
+
+```python
+def run_epoch(model, optimizer, data_loader, loss_func, device, results, score_funcs, prefix="", desc=None):
+    running_loss = []
+    y_true = []
+    y_pred = []
+    start = time.time()
+    for inputs, labels in tqdm(data_loader, desc=desc, leave=False):
+        #Move the batch to the device we are using. 
+        inputs = moveTo(inputs, device)
+        labels = moveTo(labels, device)
+
+        y_hat = model(inputs) #this just computed f_Θ(x(i))
+        # Compute loss.
+        loss = loss_func(y_hat, labels)
+
+        if model.training:
+            loss.backward()
+            optimizer.step()
+            optimizer.zero_grad()
+
+        #Now we are just grabbing some information we would like to have
+        running_loss.append(loss.item())
+
+        if len(score_funcs) > 0 and isinstance(labels, torch.Tensor):
+            #moving labels & predictions back to CPU for computing / storing predictions
+            labels = labels.detach().cpu().numpy()
+            y_hat = y_hat.detach().cpu().numpy()
+            #add to predictions so far
+            y_true.extend(labels.tolist())
+            y_pred.extend(y_hat.tolist())
+    #end training epoch
+    end = time.time()
+    
+    y_pred = np.asarray(y_pred)
+    if len(y_pred.shape) == 2 and y_pred.shape[1] > 1: #We have a classification problem, convert to labels
+        y_pred = np.argmax(y_pred, axis=1)
+    #Else, we assume we are working on a regression problem
+    
+    results[prefix + " loss"].append( np.mean(running_loss) )
+    for name, score_func in score_funcs.items():
+        try:
+            results[prefix + " " + name].append( score_func(y_true, y_pred) )
+        except:
+            results[prefix + " " + name].append(float("NaN"))
+    return end-start #time spent on epoch
+```
+
+## **A Better Way to Train Deep Learning Models**
+
+Keypoint remember 👇🏻
+
+* model $f (\\ .\\ )$ — To train our PyTorch model, we need to run it through the dataset one time. This is called an epoch. After one epoch, the model will be a little bit better at making predictions. We can continue to train the model by running more epochs.
+    
+* loss\_function $\\mathcal{L}(y, \\hat{y})$ — The loss function $\\ell(.\\ , \\ . )$ takes two arguments model output and labels ( **y** ) and return a loss.
+    
+* train\_loader — This is a DataLoader object that returns tuples of ( **input, label** ) pairs used for training the model.
+    
+* test\_loader — This is a DataLoader object that returns tuples of (input, label) pairs used for evaluating the model.
+    
+
+optimizer $opt(⋅)$— Optimization is an important process in training time because it adjusts model parameters and reduces error. There are many different types of optimization available in PyTorch “***SGD, ADAM & RMSProp”,*** each with its own strengths and weaknesses. The best optimizer depends on what problem you try to solve. Here you can find full [details of optimizer available in PyTorch.\*](https://pytorch.org/docs/stable/optim.html)
+
+```python
+'''
+A simple example of how you use Optimizer in PyTorch. 
+torch.optim is a package in PyTorch that provides various 
+optimization algorithms.
+
+'''
+import torch.optim as optim
+optimizer = torch.optim.SGD(model.parameters(), lr=0.01)
+```
+
+$$Here\ is\ the\ full\ code\ I\ implement\\ 👇🏻$$
+
+```python
+def simple_network(model, loss_func, train_loader, test_loader=None, score_funcs=None, 
+                         epochs=50, device="cpu", checkpoint_file=None):
+    to_track = ["epoch", "total time", "train loss"]
+    if test_loader is not None:
+        to_track.append("test loss")
+    for eval_score in score_funcs:
+        to_track.append("train " + eval_score )
+        if test_loader is not None:
+            to_track.append("test " + eval_score )
+        
+    total_train_time = 0 #How long have we spent in the training loop? 
+    results = {}
+    #Initialize every item with an empty list
+    for item in to_track:
+        results[item] = []
+        
+    #SGD is Stochastic Gradient Decent.
+    optimizer = torch.optim.SGD(model.parameters(), lr=0.001)
+    #Place the model on the correct compute resource (CPU or GPU)
+    model.to(device)
+    for epoch in tqdm(range(epochs), desc="Epoch"):
+        model = model.train()#Put our model in training mode
+        
+        total_train_time += run_epoch(model, optimizer, train_loader, loss_func, device, results, score_funcs, prefix="train", desc="Training")
+
+        results["total time"].append( total_train_time )
+        results["epoch"].append( epoch )
+        
+        if test_loader is not None:
+            model = model.eval()
+            with torch.no_grad():
+                run_epoch(model, optimizer, test_loader, loss_func, device, results, score_funcs, prefix="test", desc="Testing")
+                    
+    if checkpoint_file is not None:
+        torch.save({
+            'epoch': epoch,
+            'model_state_dict': model.state_dict(),
+            'optimizer_state_dict': optimizer.state_dict(),
+            'results' : results
+            }, checkpoint_file)
+
+    return pd.DataFrame.from_dict(results)
+```
+
+With the new and improved code, let's retrain our model on the moons dataset. Since accuracy is what we really care about, we import the accuracy metrics from Scikit-learn. Let's also include the F1 score metrics to demonstrate how the code can handle two different metrics at the same time.
+
+```python
+from sklearn.metrics import accuracy_score
+from sklearn.metrics import f1_score
+```
+
+We also want to do a better job of evaluating our model. We can do this by creating a validation set. A validation set is a set of data that is not used for training the model. Instead, it is used to evaluate the model's performance after it has been trained.
+
+Since the moons data is synthetic, we can easily create a new dataset for validation. To do this, we can simply generate more data points. This will give us a more accurate estimate of the model's performance on unseen data.
+
+Rather than performing 200 epochs of training like before, let's generate a larger training set. This will help the model to learn more about the data and improve its performance.
+
+```python
+X_train, y_train = make_moons(n_samples=8000, noise=0.4)
+X_test, y_test = make_moons(n_samples=200, noise=0.4)
+train_dataset = TensorDataset(torch.tensor(X_train, dtype=torch.float32), torch.tensor(y_train, dtype=torch.long))
+test_dataset = TensorDataset(torch.tensor(X_test, dtype=torch.float32), torch.tensor(y_test, dtype=torch.long))
+
+###   ...... ###  ...... ###  ...... ### ...... ### 
+training_loader = DataLoader(train_dataset, shuffle=True)
+testing_loader = DataLoader(test_dataset)
+```
+
+We have everything we need to train our model again. We will use the file ***model.pt*** to save the model's results. All we need to do is create a new model object and call the ***train\_simple\_network*** function.
+
+$$Here\ is\ the\ code\\👇🏻$$
+
+```python
+model = nn.Sequential(
+    nn.Linear(2,  30),
+    nn.Tanh(),
+    nn.Linear(30,  30),
+    nn.Tanh(),
+    nn.Linear(30, 2),
+)
+results_pd = simple_network(model, loss_func, training_loader, epochs=5, 
+                            test_loader=testing_loader, checkpoint_file='model.pt', 
+                            score_funcs={'Acc':accuracy_score,'F1': f1_score})
+```
+
+Now it's time to look at some results. First, let's see if we can load our checkpoint model instead of using the one we already trained. To load a model, we first need to create a new model that has all the same sub-modules as the original model. This is necessary so that the weights in the new model match the weights in the original model. For example, if the original model had 30 neurons in the second hidden layer, then the new model must also have 30 neurons in the second hidden layer. Otherwise, there will be too few or too many neurons, and an error will occur.
+
+One reason I use the ***torch.load*** and ***torch.save*** functions because they provide a ***map\_location*** argument. This argument allows us to specify where the model should be loaded to. For example, if we are using a GPU, we can specify that the model should be loaded to the GPU. This can improve performance because the model will be able to run on the GPU instead of the CPU.
+
+Once we have loaded the dictionary of results, we can use the ***load\_state\_dict*** function to restore the states of our original model into the new object. This will essentially create a copy of the original model. Finally, we can apply the model to the data and see that we get the same results as we did with the original model.
+
+```python
+model_new = nn.Sequential(
+    nn.Linear(2,  30),
+    nn.Tanh(),
+    nn.Linear(30,  30),
+    nn.Tanh(),
+    nn.Linear(30, 2),
+)
+
+visualize2DSoftmax(X_test, y_test, model_new, title="Initial Model")
+plt.show()
+
+checkpoint_dict = torch.load('model.pt', map_location=device)
+
+model_new.load_state_dict(checkpoint_dict['model_state_dict'])
+
+visualize2DSoftmax(X_test, y_test, model_new, title="Loaded Model")
+plt.show()
+```
+
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1693786915008/ba065129-2bef-472f-9f06-9671f7a695eb.png align="center")
+
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1693786959673/b2c394bb-3bb3-45a2-a95a-7f3bb80309dc.png align="center")
+
+The initial model does not give very good predictions because it has not been trained yet. The weights of the model are random values, and they do not yet reflect the relationship between the input and output data. If you run the code several times, you will get slightly different results each time, because the weights of the model are randomly generated each time.
+
+After we load the previous model state into the ***model\_new,*** we get the nice crisp results we expect. This is because the previous model has been trained on a large dataset, and the weights of the model have been optimized to reflect the relationship between the input and output data.
+
+In other words, the initial model is not very good at making predictions because it does not have enough information. It does not know how the input data relates to the output data. The previous model, on the other hand, has been trained on a large dataset, and it has learned how to make predictions based on the input data.
+
+Our new training function returns a panda's DataFrame object with information about the model after every epoch. This information can be easily visualized, for example, by plotting the training and validation accuracy as a function of the epoch.
+
+Here is an example of how to plot the training and validation accuracy:
+
+```python
+sns.lineplot(x='epoch', y='train Acc', data=results_pd, label='Train')
+sns.lineplot(x='epoch', y='test Acc', data=results_pd, label='Validation')
+```
+
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1693787046439/e0d16bd6-432e-4913-a133-a4a59da363c6.png align="center")
+
+As you can see, the training accuracy is increasing over time, and the validation accuracy is also increasing, but at a slower rate. This is a good sign, as it means that the model is not overfitting to the training data.
+
+You can also use the pandas DataFrame to get other information about the model, such as the loss and the number of epochs it took to train.
+
+### Predict Whether This Person Covid or Not
+
+Learning time simple datasets are useful but in the real world you don’t use this type of simple dataset train model. You need a large amount of datasets and powerful GPU to train the model. Check this [**Covid19 predication model**](https://hiwhy.io/covid-19-deep-learning-model) so you understand better.
+
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1693787110459/ef83ac70-6a74-4597-b4f5-8781ec0cec96.png align="center")
+
+### Here Are Some Model Improvement Techniques That You Can Use
+
+Note 🔥 — This is all hyperparameters you can change to improve model performance. Don’t change so many things same time. Start one thing, see the result , then change another one.
+
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1693787160020/c28d13e4-b3d5-40c5-8f61-28422bbbac27.png align="center")
+
+### Learn Right Way
+
+I see many people just read and watch videos and train models using the hello world dataset MNIST, I don’t agree with this type of learning. Because in the real world, this type of dataset you not work and the simple problem does not require deep learning. Below I share some of the techniques you can use to learn, this is my personal advice it’s your choice to follow or not.
+
+* Learn the basic thing you need ( Suppose what is classification and how to build a classification model in PyTorch ). Don't focus on memorizing syntax.
+    
+* If the basic is complete now it’s time to Download a real-world dataset from [Kaggle](https://www.kaggle.com/) or another [competition website](https://www.drivendata.org/) and try to implement what you learn. I think this way you learn so much.
+    
+* Learn and implement —&gt; Suppose you read ( Activation function is important ) implement this and see what result you get. The more you practice this way more you understand better.
+    
+* Connect other great AI researchers, I found [Twitter,](https://www.threads.net/@hi_chiai) and [Linkedin](https://www.linkedin.com/in/sushanta-das-/) is the best place to connect with great people.
+    
+* Asked question Q , read { English | Math } convert code. **Q = E.M →C**
+    
+
+---
+
+Thanks for reading! I hope you found this article helpful. If you have any questions or suggestions, please don't hesitate to comment below. Your comment is important to me, I'm always happy to help people learn about deep learning.
