@@ -40,11 +40,11 @@ Note 🔥— This is not a blog post that you read. It is a note that I took sev
 
 I know this article covers a lot of material, but I promise it's fun to learn. If you need help understanding something in the article, please feel free to [ask](https://www.linkedin.com/in/sushanta-das-/) me in a comment below. I'm always happy to help.
 
-Keep reading 📌
+**Keep reading 📌**
 
 ## What Is Deep Learning
 
-> \*“A field of study that gives computers the ability to learn without being explicitly programmed.” —\****Arthur Lee Samuel***
+> *A field of study that gives computers the ability to learn without being explicitly programmed. -* ***Arthur Lee Samuel***
 
 ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1693617104888/196d8521-b6b6-4ac1-9986-782e6ac86db6.png align="center")
 
@@ -459,7 +459,7 @@ import torch.nn.functional as F
 
 $$Myth \ 🔥 \downarrow 😭$$
 
- $$ \frac{\partial J}{\partial \mathbf{W}^{(1)}}= \text{prod}\left(\frac{\partial J}{\partial \mathbf{z}}, \frac{\partial \mathbf{z}}{\partial \mathbf{W}^{(1)}}\right) + \text{prod}\left(\frac{\partial J}{\partial s}, \frac{\partial s}{\partial \mathbf{W}^{(1)}}\right)= \frac{\partial J}{\partial \mathbf{z}} \mathbf{x}^\top + \lambda \mathbf{W}^{(1)} \$$
+$$\frac{\partial J}{\partial \mathbf{W}^{(1)}}= \text{prod}\left(\frac{\partial J}{\partial \mathbf{z}}, \frac{\partial \mathbf{z}}{\partial \mathbf{W}^{(1)}}\right) + \text{prod}\left(\frac{\partial J}{\partial s}, \frac{\partial s}{\partial \mathbf{W}^{(1)}}\right)= \frac{\partial J}{\partial \mathbf{z}} \mathbf{x}^\top + \lambda \mathbf{W}^{(1)} \$$
 
 Myth 🔥 — Don’t need a math background to understand deep learning is wrong. Math is the foundation building block in deep learning research. No research comes in any field without using Math because it’s a 'Universal🪄' tool. So when someone says you don’t need math to understand this field, asked this type of person what is meaning 'Neural Network'?
 
@@ -518,7 +518,7 @@ $$f ( x ) = \mathbf{ x \ }^T W^d,^ C\$$
 
 When adding a second layer with a new matrix this notation is like this!👇🏻
 
-$$f({x}) = {x}^\top {W}^{d \times n}_{(h_1)} {W}^{n \times C}_{(\text{out})}$$
+$$f({x}) = {x}^\top {W}^{d \times n}{(h_1)} {W}^{n \times C}{(\text{out})}$$
 
 ### **Simple Definition of Neural Networks**
 
