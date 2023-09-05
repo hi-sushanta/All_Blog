@@ -48,13 +48,13 @@ I know this article covers a lot of material, but I promise it's fun to learn. I
 
 ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1693617104888/196d8521-b6b6-4ac1-9986-782e6ac86db6.png align="center")
 
-When you ask someone or search Google🔍 ( what is deep learning ? ) you find so many different types of answers, sometimes easy or sometimes hard to understand. I know this because I face the same problem some years ago in my journey.
+When you ask someone or search Google🔍 ( what is deep learning ? ) you find so many different types of answers, sometimes easy or sometimes hard to understand. I know this because I faced the same problem some years ago in my journey.
 
-You already know [‘machine learning’](https://hiwhy.io/complete-machine-learning-guide) is a field we develop intelligent machines that can learn and interact with humans. The same is deep learning — a subfield of machine learning, but deep learning use of ANN ( artificial neural network ) that inspires our human brain. It takes fast time confusing but trusts me, I explain one by one, just read!
+You already know that [‘machine learning’](https://hiwhy.io/complete-machine-learning-guide) is a field we develop intelligent machines that can learn and interact with humans. The same is deep learning — a subfield of machine learning, but deep learning uses ANN ( **artificial neural network** ) that inspires our human brain. It takes time confusing but trust me, I explain one by one, Just read!
 
-The Goal of ‘machine learning’ and ‘deep learning’ is to build powerful intelligent ‘artificial intelligence ( AI ) ’. At this time many people think, is human replaced by a computer? The short answer is ‘not’ because you don't know how powerful our brain is..
+The Goal of ‘machine learning’ and ‘deep learning’ is to build powerful intelligent artificial intelligence. At this time many people think, is human replaced by a computer? The short answer is ‘not’ because you don't know how powerful our brain is...
 
-Ignore 😡 — When someone says you ‘AI replace human’ don’t talk this type of people. Because they don’t know anything about it.
+**Ignore 😡 —** When someone says you **‘AI replace human’** don’t talk this type of person. Because they don’t know anything about it.
 
 Deep learning is a powerful technique to solve real-world tasks in a variety of fields such as computer vision ( image/ video ), natural language processing ( text ), and automatic speech recognition ( audio ) so many things.
 
@@ -62,33 +62,33 @@ Deep learning is a powerful technique to solve real-world tasks in a variety of 
 
 Before I write code let’s introduce some of the notation you must know meaning. I am showing you the most common notation that is used by almost all deep learning researchers in this field. This thing helps you understand the research paper easily.
 
-I use **$x$** to denote input features \*\**and $f( \\ )$ to denote a neural network model. The label associated with $****x****$ is denoted $y$. Model you build in $x$ and produce predication $ŷ$. full write become a*
+I use **x** to denote input features *and* ***f( )*** *to denote a neural network model. The label associated with* ***x*** *is denoted* ***y****. The model you build in x and produce predication ŷ. full write become a*
 
 $$ŷ = f ( x )$$
 
-I use$ \\ Θ$ ( greek letter theta ) to denote the parameter. In neural networks lots of parameters$ \\ Θ$ we need to adjust this parameter and try to reduce the loss function.
+I use **Θ** (Greek letter theta ) to denote the parameter. In neural networks lots of parameters **Θ** we need to adjust this parameter and try to reduce the loss function.
 
 $$ŷ = fΘ ( x )$$
 
 ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1693700228292/9733a3d2-9dc3-4180-b4d1-a705cda59372.png align="center")
 
-Note 💥— Loss function used in deep learning to measure the difference between the predicted $ŷ$ and actual value$ \\ y$.
+**Note** — Loss function used in deep learning to measure the difference between the predicted **ŷ** and actual value **y**.
 
 $$p( ŷ|y) = ?$$
 
-Suppose predicated $ŷ$ value is 7 and actual value $y$ is 10. At this time our loss function tells the gap between the actual value $y 10 - ŷ 7 = ℓ 3$. Loss function is a very useful thing to help your model improve its accuracy.
+Suppose predicated **ŷ** value is **7** and the actual value **y** is **10.** At this time our loss function tells the gap between the actual value **y 10 - ŷ 7 = ℓ 3**. The loss function is a very useful thing in deep learning, it guides you on how to imporve model accuracy.
 
-Now you understand how to define a model ( ***neural network*** ), but we need one more tool to check how badly perform our model prediction truth value $*y*$. Remember Our goal is to label *y* and predication $*ŷ$* how much distance\*. Let’s see one more example —\* 👇🏻
+Now you understand how to define a model ( ***neural network*** ), but we need one more tool to check how badly perform our model prediction truth value ***y*.** Remember Our goal is to label ***y*** and predication ***ŷ*** how much distance. Let’s see one more example 👇🏻
 
-Example 🔥 :~ Actual truth $y$ is $( 0.00039 )$ and our model $\\ ŷ $ predication is$\\ ( 0.00021 ) $ which means $\\ ℓ(ŷ , y)$ *—* $0.00018$ ‬ distance. What do you think it’s a good model?
+**Example 🔥 :** Actual truth **y is ( 0.00039 )** and our model **ŷ** predication is **( 0.00021 )** which means **ℓ(ŷ, y)** *—* **$0.00018**‬ distance. What do you think it’s a good model?
 
-Note🎯 :~ In deep learning loss function is written \*\*\*\* $ℓ (ŷ , y)$*.*
+**Note:** In deep learning, loss function is written **ℓ (ŷ, y)***.*
 
 $$loss\ function {\ (\ ŷ\ 🤖model\ predication - y\ label\ (Truth) }\ -🔍\ ℓ (ŷ , y)$$
 
 At this moment you understand how to define a model and write a loss function! It’s time to train the model and minimize loss ( function ).
 
-Note🎯 :~ Sometime you hear about neural networks as a function. I know it’s confusing the first time, but trust me it’s a complex function you build as a deep learning practitioner. Our goal is to make this complex function that acts like our <s>human brain. ?</s>
+Note :~ Sometime you hear about neural networks as a function. I know it’s confusing the first time, but trust me it’s a complex function you build as a deep learning practitioner. Our goal is to make this complex function that acts like our <s>human brain. ?</s>
 
 Now come to our topic, suppose you have training set $***N$*** example, use optimizer train model and minimize the loss . So we write this full equation below.
 
