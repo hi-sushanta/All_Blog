@@ -62,7 +62,7 @@ Deep learning is a powerful technique to solve real-world tasks in a variety of 
 
 Before I write code let’s introduce some of the notation you must know meaning. I am showing you the most common notation that is used by almost all deep learning researchers in this field. This thing helps you understand the research paper easily.
 
-I use **x** to denote input features *and* ***f( )*** *to denote a neural network model. The label associated with* ***x*** *is denoted* ***y****. The model you build in x and produce predication ŷ. full write become a*
+I use **x** to denote input features *and* ***f( )*** *to denote a neural network model. The label associated with* ***x*** *is denoted* ***y***. The model you build in x and produce predication ŷ, full write become.
 
 $$ŷ = f ( x )$$
 
@@ -76,21 +76,19 @@ $$ŷ = fΘ ( x )$$
 
 $$p( ŷ|y) = ?$$
 
-Suppose predicated **ŷ** value is **7** and the actual value **y** is **10.** At this time our loss function tells the gap between the actual value **y 10 - ŷ 7 = ℓ 3**. The loss function is a very useful thing in deep learning, it guides you on how to imporve model accuracy.
+Suppose predicated **ŷ** value is **7** and the actual value **y** is **10.** At this time our loss function tells the gap between the actual value **y 10 - ŷ 7 = ℓ 3**. The loss function is a very useful thing in deep learning, it guides you on how to improve model accuracy.
 
-Now you understand how to define a model ( ***neural network*** ), but we need one more tool to check how badly perform our model prediction truth value ***y*.** Remember Our goal is to label ***y*** and predication ***ŷ*** how much distance. Let’s see one more example 👇🏻
+Now you understand how to define a model ( ***neural network*** ), but we need one more tool to check how badly perform our model prediction truth value ***y*.** Remember Our goal is to label ***y*** and predication ***ŷ*** how much distance. Let’s see one more example.
 
-**Example 🔥 :** Actual truth **y is ( 0.00039 )** and our model **ŷ** predication is **( 0.00021 )** which means **ℓ(ŷ, y)** *—* **$0.00018**‬ distance. What do you think it’s a good model?
+**Example:** Actual truth **y is ( 0.00039 )** and our model **ŷ** predication is **( 0.00021 )** which means **ℓ(ŷ, y)** *—* **$0.00018**‬ distance. What do you think it’s a good model?
 
-**Note:** In deep learning, loss function is written **ℓ (ŷ, y)***.*
+**Note:** In deep learning, the loss function is written **ℓ (ŷ, y)***.*
 
 $$loss\ function {\ (\ ŷ\ 🤖model\ predication - y\ label\ (Truth) }\ -🔍\ ℓ (ŷ , y)$$
 
 At this moment you understand how to define a model and write a loss function! It’s time to train the model and minimize loss ( function ).
 
-Note :~ Sometime you hear about neural networks as a function. I know it’s confusing the first time, but trust me it’s a complex function you build as a deep learning practitioner. Our goal is to make this complex function that acts like our <s>human brain. ?</s>
-
-Now come to our topic, suppose you have training set $***N$*** example, use optimizer train model and minimize the loss . So we write this full equation below.
+Note: Sometimes you hear about neural networks as a function. I know it’s confusing first time, but trust me it’s a complex function you build as a deep learning practitioner. Our goal is to make this complex function that acts like our <s>human brain. ?. </s> Now come to our topic, suppose you have a training set ***N*** example, use optimizer train model and minimize the loss. So we write this full equation below.
 
 $$\min_\theta \sum_{i = 1}^N \ell (f_\theta (x_i), y_i),$$
 
@@ -98,9 +96,9 @@ Meaning this equation ⁉️
 
 Modify the parameters to minimize the error/loss of the neural network’s prediction against the correct predictions over the complete dataset.
 
-Equation convert to code 🧑🏻‍💻
-
 ```python
+# Equation convert to code 🧑🏻‍💻
+
 def F(X, y, f, theta): 
        total_loss = 0 
        for i in range(N): 
@@ -108,13 +106,13 @@ def F(X, y, f, theta):
        return total_loss
 ```
 
-One thing you notice math describe long sentence, in short, that’s why deep learning researcher use math to describe their paper ***{ after all math is the universal language communicate },*** Don’t be confuse see this type of long equation paper, ***{ write down each equation small peace by peace and understand meaning }***.
+One thing you notice math describe long sentence, in short, that’s why deep learning researcher uses math to describe their papers. Don’t be confuse see this type of long equation paper, ***{ write down each equation small peace by peace and understand meaning }***.
 
-Let’s write this equation piece by piece — $\\sum\_{i = 1}^N $ The summation goes over all $***N***$ pairs of input $x\_i$ and output $\\ y\_i $ and determines how badly the $(\\ell (. , .))$ model doing. This equation you see is not minimized loss $\\ ℓ (ŷ , y)$ only computes how far true label $y$ and predication $ŷ$ is.
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1693963337012/49bccafb-934c-4e30-bdb1-3c161ba5d443.png align="left")
 
-So next question in your mind? when this equation $(\\ell (. , .))$ don’t minimize loss , so how we adjust $\\theta$ ( paramater ) minimize loss function $(\\ell (. , .))$. Minimize the loss important step building model so we use $Gradient\\ descent$ as a tool to minimize the $ℓ (ŷ , y)$. The best thing about PyTorch its provide [**automatic differentiation**](https://pytorch.org/tutorials/beginner/blitz/autograd_tutorial.html) means you don’t need to worry about tracking everything $\\theta$ because it’s an automatic track for us, that’s why people use this awesome framework, it provides lots of features and flexibility for deep learning researcher.
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1693963485335/1c928136-18fc-4a03-be6d-5dd2d681aaf2.png align="left")
 
-Suppose our model $current \\ state$ is $\\Theta\_k$ we want to improve and find next $state$ $\\Theta\_{k+1}$, which our hope is to reduce our model loss $(\\ell (. , .))$? So this time equation we want to solve is
+# Airtcle progress !
 
 $$\begin{equation} \Theta_{k+1} = \Theta_k - \eta \cdot \frac{1}{N} \sum_{i=1}^N \nabla_{\Theta_k} f_{\Theta_k}(x_i, y_i). \end{equation}$$
 
