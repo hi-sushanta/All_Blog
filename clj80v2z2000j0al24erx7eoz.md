@@ -48,11 +48,11 @@ Keep reading 📌
 
 ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1693617104888/196d8521-b6b6-4ac1-9986-782e6ac86db6.png align="center")
 
-When you ask someone or search Google🔍 ( what is deep learning ? ) you find so many different types of answers, sometimes easy or sometimes hard to understand. I know this because I face the same problem some years ago in my journey.
+When you ask someone or search Google🔍 ( what is deep learning ? ) you find so many different types of answers, sometimes easy or sometimes hard to understand. I know this because I faced the same problem some years ago in my journey.
 
-You already know [‘machine learning’](https://hiwhy.io/complete-machine-learning-guide) is a field we develop intelligent machines that can learn and interact with humans. The same is deep learning — a subfield of machine learning, but deep learning use of ANN ( artificial neural network ) that inspires our human brain. It takes fast time confusing but trusts me, I explain one by one, just read!
+You already know that [‘machine learning’](https://hiwhy.io/complete-machine-learning-guide) is a field we develop intelligent machines that can learn and interact with humans. The same is deep learning — a subfield of machine learning, but deep learning uses ANN ( artificial neural network ) that inspires our human brain. It takes time confusing but trust me, I explain one by one, Just read!
 
-The Goal of ‘machine learning’ and ‘deep learning’ is to build powerful intelligent ‘artificial intelligence ( AI ) ’. At this time many people think, is human replaced by a computer? The short answer is ‘not’ because you don't know how powerful our brain is..
+The Goal of ‘machine learning’ and ‘deep learning’ is to build powerful intelligent ‘artificial intelligence ( AI ) ’. At this time many people think, is human replaced by a computer? The short answer is ‘not’ because you don't know how powerful our brain is.
 
 Ignore 😡 — When someone says you ‘AI replace human’ don’t talk this type of people. Because they don’t know anything about it.
 
@@ -66,31 +66,29 @@ Before I write code let’s introduce some of the notation you must know meaning
 
 $$ŷ = f ( x )$$
 
-I use$ \\ Θ$ ( greek letter theta ) to denote the parameter. In neural networks lots of parameters$ \\ Θ$ we need to adjust this parameter and try to reduce the loss function.
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1694046342560/8b6ade4a-430e-4a23-8045-f2c492c11c0e.png align="left")
 
 $$ŷ = fΘ ( x )$$
 
 ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1693700228292/9733a3d2-9dc3-4180-b4d1-a705cda59372.png align="center")
 
-Note 💥— Loss function used in deep learning to measure the difference between the predicted $ŷ$ and actual value$ \\ y$.
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1694046440712/efac1917-4780-43c6-a9ff-0582d97a72d8.png align="left")
 
 $$p( ŷ|y) = ?$$
 
-Suppose predicated $ŷ$ value is 7 and actual value $y$ is 10. At this time our loss function tells the gap between the actual value $y 10 - ŷ 7 = ℓ 3$. Loss function is a very useful thing to help your model improve its accuracy.
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1694046521416/135a45f0-36ea-4f77-b807-d1fbe9ae2b8c.png align="left")
 
-Now you understand how to define a model ( ***neural network*** ), but we need one more tool to check how badly perform our model prediction truth value $*y*$. Remember Our goal is to label *y* and predication $*ŷ$* how much distance\*. Let’s see one more example —\* 👇🏻
+Now you understand how to define a model ( ***neural network*** ), but we need one more tool to check how badly perform our model prediction truth value ***y***. Remember Our goal is to label *y* and predication ***ŷ*** how much distance\*. Let’s see one more example.
 
-Example 🔥 :~ Actual truth $y$ is $( 0.00039 )$ and our model $\\ ŷ $ predication is$\\ ( 0.00021 ) $ which means $\\ ℓ(ŷ , y)$ *—* $0.00018$ ‬ distance. What do you think it’s a good model?
-
-Note🎯 :~ In deep learning loss function is written \*\*\*\* $ℓ (ŷ , y)$*.*
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1694047330510/c960236b-5861-4072-87d2-a51d8d5783c2.png align="left")
 
 $$loss\ function {\ (\ ŷ\ 🤖model\ predication - y\ label\ (Truth) }\ -🔍\ ℓ (ŷ , y)$$
 
 At this moment you understand how to define a model and write a loss function! It’s time to train the model and minimize loss ( function ).
 
-Note🎯 :~ Sometime you hear about neural networks as a function. I know it’s confusing the first time, but trust me it’s a complex function you build as a deep learning practitioner. Our goal is to make this complex function that acts like our <s>human brain. ?</s>
+Note: Sometimes you hear about neural networks as a function. I know it’s confusing the first time, but trust me it’s a complex function you build as a deep learning practitioner. Our goal is to make this complex function that acts like our <s>human brain.</s>
 
-Now come to our topic, suppose you have training set $***N$*** example, use optimizer train model and minimize the loss . So we write this full equation below.
+Now come to our topic, suppose you have training set ***N*** example, use optimizer train model and minimize the loss. So we write this full equation below.
 
 $$\min_\theta \sum_{i = 1}^N \ell (f_\theta (x_i), y_i),$$
 
@@ -98,9 +96,8 @@ Meaning this equation ⁉️
 
 Modify the parameters to minimize the error/loss of the neural network’s prediction against the correct predictions over the complete dataset.
 
-Equation convert to code 🧑🏻‍💻
-
 ```python
+# Equation convert to code 🧑🏻‍💻
 def F(X, y, f, theta): 
        total_loss = 0 
        for i in range(N): 
@@ -108,48 +105,29 @@ def F(X, y, f, theta):
        return total_loss
 ```
 
-One thing you notice math describe long sentence, in short, that’s why deep learning researcher use math to describe their paper ***{ after all math is the universal language communicate },*** Don’t be confuse see this type of long equation paper, ***{ write down each equation small peace by peace and understand meaning }***.
+One thing you notice math describe long sentence, in short, that’s why deep learning researcher uses math to describe their paper. Don’t be confuse see this type of long equation paper, ***{ write down each equation small peace by peace and understand meaning }*.**
 
-Let’s write this equation piece by piece — $\\sum\_{i = 1}^N $ The summation goes over all $***N***$ pairs of input $x\_i$ and output $\\ y\_i $ and determines how badly the $(\\ell (. , .))$ model doing. This equation you see is not minimized loss $\\ ℓ (ŷ , y)$ only computes how far true label $y$ and predication $ŷ$ is.
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1694048185347/943098fa-7bc1-42d2-9ef7-4899243666d4.png align="left")
 
-So next question in your mind? when this equation $(\\ell (. , .))$ don’t minimize loss , so how we adjust $\\theta$ ( paramater ) minimize loss function $(\\ell (. , .))$. Minimize the loss important step building model so we use $Gradient\\ descent$ as a tool to minimize the $ℓ (ŷ , y)$. The best thing about PyTorch its provide [**automatic differentiation**](https://pytorch.org/tutorials/beginner/blitz/autograd_tutorial.html) means you don’t need to worry about tracking everything $\\theta$ because it’s an automatic track for us, that’s why people use this awesome framework, it provides lots of features and flexibility for deep learning researcher.
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1694048267779/43fc77cf-e04e-41f4-a35d-990442378461.png align="left")
 
-Suppose our model $current \\ state$ is $\\Theta\_k$ we want to improve and find next $state$ $\\Theta\_{k+1}$, which our hope is to reduce our model loss $(\\ell (. , .))$? So this time equation we want to solve is
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1694048334156/da756059-7cb5-4ad6-af0a-69f2f2e89f96.png align="left")
 
 $$\begin{equation} \Theta_{k+1} = \Theta_k - \eta \cdot \frac{1}{N} \sum_{i=1}^N \nabla_{\Theta_k} f_{\Theta_k}(x_i, y_i). \end{equation}$$
 
-Here is a breakdown of the equation 😓
-
-* $Θk$ is the model parameter at iteration $k$.
-    
-* $*η*$ is the learning rate.
-    
-* $*N*$ is the number of training examples.
-    
-* $x\_i$ is the **$i$** training example.
-    
-* $y\_i$ is the label for the $i$ training example.
-    
-* $*fΘk(x\_i,y\_i)*$ is the loss function for the $i$ training example, evaluated at the model parameter $Θk$.
-    
-* $\\nabla\_{\\Theta\_k} f\_{\\Theta\_k}(x\_i, y\_i)$ is the gradient of the loss function $*f\_{\\Theta\_k}(x\_i, y\_i)$* with respect to the model parameter $Θ\_k$.
-    
-
-The equation says that the model parameter at iteration $*k+1*$ is updated by taking the current model parameter $Θ\_k$, subtracting the learning rate $*η*$ times the average of the gradients of the loss function with respect to the model parameter, evaluated at each training example.
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1694048464734/d78ee679-8c7b-43f4-a126-621a3e668cbb.png align="left")
 
 ### PyTorch Training Process
 
 In this article, I am using a deep-learning framework called PyTorch. If you are not familiar don’t worry [***PyTorch documentation***](https://pytorch.org/tutorials/beginner/basics/intro.html) helpful resource for you. In this article, I covet most of the important things you need to know about how to use this framework!
 
-***Question*** 🔥:~ Why PyTorch, not TensorFlow or others?
+***Question***: Why PyTorch, not TensorFlow or others?
 
-***Answer -*** Because it’s easy to use compared to other frameworks, and most of all big companies like ***Apple, Meta ( Facebook ), OpenAI,*** ***Google*** etc used this framework for their research.
+***Answer:*** Because it’s easy to use compared to other frameworks, and most of all big companies like ***Apple, Meta ( Facebook ), OpenAI,*** and ***Google*** used this framework for their research. Also, it’s a popular framework for researchers, because it’s easy and user-friendly, if you learn more about which framework is right for you, [*read this awesome guide written by* ***AssemblyAI***](https://www.assemblyai.com/blog/pytorch-vs-tensorflow-in-2023/).
 
-Also, it’s a popular framework for researchers, because it’s easy and user-friendly, if you learn more about which framework is right for you, [*read this awesome guide written by* ***AssemblyAI***](https://www.assemblyai.com/blog/pytorch-vs-tensorflow-in-2023/).
+If you know one framework ( ***TensorFlow, PyTorch*** ), then switching to another framework takes hours.
 
-If you know one framework ( ***TensorFlow, PyTorch*** ), then switching to another framework takes hours .
-
-Note 🔥:~ I am using PyTorch which mean is not TensorFlow is bad. Both framework it’s awesome and provide lots of features you need.
+Note: I am using PyTorch which means is not TensorFlow is bad. Both frameworks are awesome and provide lots of features you need.
 
 ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1693700748148/67e7104e-4940-4d18-8da5-49a737ff3552.png align="center")
 
@@ -157,18 +135,18 @@ Everything in deep learning comes from big data. Without data, you can't build a
 
 Here is a framework you remember all the time when you build any model deep learning!
 
-* Load data { data can be any format - ***text, images, videos, etc..*** } \*\*\*\*\*\*and turn tensor format.
+* Load data { data can be any format - ***text, images, videos, etc.***} and turn tensor format.
     
-* Build your own model or use a pre-trained model. You can find pre-trained models in this place { [***PyTorch Hub***](https://pytorch.org/hub/)***,*** [***TensorFlow Hub***](https://www.tensorflow.org/hub)***,*** [***Hugging Face***](https://huggingface.co/models) } or you search your own. The benefit of using a pre-trained model is, this model builds researchers in this field.
+* Build your model or use a pre-trained model. You can find pre-trained models in this place { [***PyTorch Hub***](https://pytorch.org/hub/)***,*** [***TensorFlow Hub***](https://www.tensorflow.org/hub)***,*** [***Hugging Face***](https://huggingface.co/models) } or you search your own. The benefit of using a pre-trained model is that this model builds researchers in this field.
     
-* Once a model is ready now it’s time to check accuracy $ℓ (ŷ , y) = ?$ of the model, which means evaluating model performance. Suppose your truth is $y = 27.36$ and model prediction is $\\hat{y} = 15.27.$ You can see the model performance is not good, so this time our extra work comes, and that is!
+* ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1694049076083/de162c0d-99a1-4f85-868d-7ee4c7012362.png align="left")
     
 * Change model Hyperparameter or other ways say that improves model performance. Deep learning is all about experiment…experiment…experiment.., so never skip this step.
     
 * Once you build a model so next step is to show the world what you create, which means save the model and send the world 🌎!
     
 
-These are the foundation step 👣 you must follow as a deep learning practitioner. ✨
+These are the foundation steps 👣 you must follow as a deep learning practitioner. ✨
 
 ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1693700811071/64866bb8-aef1-4a1a-ba31-a6c8eb0014d4.png align="center")
 
@@ -176,13 +154,15 @@ I understand that you are interested in writing code and training neural network
 
 ## Building A Linear Regression Model
 
-I know you are bored! but trust me it’s a field it’s more theory and math that need to understand otherwise you suffer long run!
+I know you are bored! But trust me it’s a field that’s more theory and math that needs to be understood otherwise you suffer long run!
 
-In this section, I build a [linear regression model](https://hiwhy.io/neural-network-regression-in-tensorflow-deep-learning/), my goal is not to build a model, but also to introduce which thing what do, this way you understand more clearly.
+In this section, I build a [linear regression model](https://hiwhy.io/neural-network-regression-in-tensorflow-guide), My goal is to build a model and introduce which thing what do, this way you understand more clearly.
 
 Note 🔥: When don’t understand something **‘read again’** or it’s like confusing read other people's work, watch other people's videos then come back **{ Never skip… }** It’s not watching a movie it’s a learning time. If you don’t enjoy learning that means you are not like in this field.
 
-Let’s import require library need solve the regression problem!
+Let’s import required library need solve the regression problem!
+
+# Progress
 
 Note 🔥: I am using Google Colab so PyTorch is already installed , when someone uses a local computer that time requires installing this library on your computer! Here is a step you follow to install PyTorch.
 
