@@ -162,9 +162,7 @@ Note 🔥: When don’t understand something **‘read again’** or it’s like
 
 Let’s import required library need solve the regression problem!
 
-# Progress
-
-Note 🔥: I am using Google Colab so PyTorch is already installed , when someone uses a local computer that time requires installing this library on your computer! Here is a step you follow to install PyTorch.
+Note: I am using Google Colab so PyTorch is already installed , when someone uses a local computer that time requires installing this library on your computer! Here is a step you follow to install PyTorch.
 
 ```python
 # This is optional for anyone use PyTorch 🔥 local computer 
@@ -173,7 +171,7 @@ Note 🔥: I am using Google Colab so PyTorch is already installed , when someon
 
 If you learn more installation process read this [***complete guide in PyTorch***](https://pytorch.org/get-started/locally/)***.***
 
-Note 🔥 : Sometimes explaining every code is not useful, so when something you do not understand. Copy code paste Google and learn, this is my trick learning I think this is helpful for you. The best way to learn anything understand other people's code and write lots of code!
+Note: Sometimes explaining every code is not useful, so when something you not understand. Copy code paste Google and learn, this is my trick learning I think this is helpful for you. The best way to learn anything understand other people's code and write lots of code!
 
 ```python
 import torch 
@@ -183,11 +181,11 @@ print('PyTorch version i use -', torch.__version__)
 
 ## The Training Loop for a Neural Network
 
-In this section, I write a training loop. This is an important concept in PyTorch🔥 because not have any ***built-in module*** so important to understand every line as necessary!
+In this section, I write a training loop. This is an important concept in PyTorch, because not have any ***built-in module*** so important to understand every line as necessary.
 
 ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1693700930534/2453ce13-b87c-42ec-bcf8-487a105bfd41.png align="center")
 
-Here is a simple code in PyTorch, on how to implement a training loop➰. I understand first time it’s very confusing, but after writing lots of code you are very familiar with each of the steps.
+Here is a simple code in PyTorch, on how to implement a training loop. I understand first time it’s very confusing, but after writing lots of code you are very familiar with each of the steps.
 
 ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1693700978681/fb079cdd-65c1-40ce-9ad0-1580aef9a574.png align="center")
 
@@ -205,9 +203,7 @@ Using PyTorch, we can write a minimal amount of code that is enough to train man
 
 The inner loop over these tuples cleans up the optimizer state with `zero_grad()` and then passes the inputs to the model to get a prediction `y_hat`. Our `loss_fun` takes in the prediction `y_hat` and the true labels to calculate a loss, describing how badly our network has done. Then we compute the gradients with `loss.backward()` and take a `step( )` with the optimizer.
 
-I hope you understand, if not **read again** . Now it’s time, to write code in pure PyTorch implement training loop. 🧑🏻‍💻
-
-> The only thing that stands between you and your dream is the will to try and the belief that it is actually possible. - Joel Brown
+I hope you understand, if not **read again**. Now it’s time, to write code in pure PyTorch implement training loop.
 
 ```python
 # This is a training loop code...
@@ -244,17 +240,17 @@ def simple_network(model, loss_func, training_loader, epochs=20, device="cpu"):
 
 In short summary — ( Training loop ) ✨
 
-We have a loss function *loss\_func $(\\ell (. , .))$* \*\*\*\*that takes two thing *predication* $( ŷ )$ and a target $(y)$and return single score how well our model is doing $(f( \\ .\\ ))$. Before training starts let’s pick a device that computes, normally in deep learning using $‘GPU’$.
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1694133067647/23e82f9d-168d-4498-a59b-8ea4e50ab425.png align="center")
 
 The training loop is where the model learns the relationship between the **features and labels** in the training data. The model does this by repeatedly going through the training data, predicting the labels for each data point, and then comparing its predictions to the actual labels. The model then uses the loss function to calculate how far off its predictions were, and uses the optimizer to update its weights in order to make its predictions closer to the actual labels.
 
 ## Defining a Toy Dataset for Model Training
 
-> *The world is changed but, one thing never changed numbers — Chi*
+> The world is changed but, one thing never changed numbers — Chi
 
 ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1693701230252/0c21e27f-6ca7-40a4-a6ab-36ae604cdfa7.png align="center")
 
-The training loop is complete, all you need is some $data, neural network $and$loss function(\\ell (. , .))$ work our linear regression model. Enough time waste let’s make some data!
+The training loop is complete, all you need is some data, neural network and loss function work our linear regression model. Enough time waste let’s make some data!
 
 ```python
 import seaborn as sns
@@ -268,9 +264,7 @@ sns.scatterplot(x=X, y=y);
 
 ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1693701300526/71f10ae5-b8bb-4f7d-b536-83d7db759a11.png align="center")
 
-This is a simple toy problem I create with strong regression trends up and down, but in the real world, you have not seen this type of simple dataset. I use this because it’s an experiment within a short period of time and you understand what happening model. Basic is the same no matter small or large dataset, the only difference is { Write more code }. In latter, I show you how to work on real-world regression datasets that are publicly available.
-
-> *The more you know, the more you can do. - Helen Keller*
+This is a simple toy problem I create with strong regression trends up and down, but in the real world, you have not seen this type of simple dataset. I use this because it’s an experiment within a short period of time and you understand what happening model. Basic is the same no matter small or large dataset, the only difference is **{ Write more code }**. In latter, I show you how to work on real-world regression datasets that are publicly available.
 
 ```python
 """
@@ -301,25 +295,15 @@ training_loader = DataLoader(SimpleRegressionDataset(X, y), shuffle=True)
 
 ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1693701389626/67c4212d-af0d-4657-a2b3-d59b372b8d37.png align="center")
 
-At this point, we have successfully understood how to create a training loop and load dataset using the PyTorch dataset object. last thing we need implementing linear regression network $ f\_\\theta(\\ . \\ ) $In this case we write simple linear function weight matrix$\\ W $take inputs vector product$ \\ x \\ $so in this case model $ f\_\\ (\\ . \\ )$ that look like this 👇🏻
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1694134211584/8c854cfb-096b-4e83-9327-7b55df00dc47.png align="center")
 
-x is a vector of all our $d$ features ( in this case, $d = 1$ ) and the matrix $W$ has a row for every feature and a column for every output. I use $W^d,^ C$ to be additionally detailed in that it is a tensor with $\\ d \\ rows$ and $\\ C \\ columns$, this is a common $\\ notation \\ ^\*$ use deep learning paper. In this case, we are predicting a single value, this means $C = 1$
-
-Note : ~ One thing you notice this linear function is not complete. If $\\ x = 0 $ , then $\\ f(x)=0$. One more thing add this function $bias \\ term \\ b$ that has no interaction with *$x$ .* Luckily for us, PyTorch has module $\\ nn. Linear (d,\\ C)$ This module creates linear layer $\\ d \\ is \\ input \\ C \\ output$ exactly what I want.
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1694134296152/af7aa72d-f21e-4f52-a816-97f660ae463b.png align="center")
 
 ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1693701632155/c9db2a88-4d6b-4ca4-b4b2-ae70c7473a31.png align="center")
 
 ## Defining The Loss Function
 
-$nn.Linear( \\ )$ gives us our model $f( \\ x \\ )$ but we still need $\\ loss \\ function\\ \\ell (. , .)$ to measure how well our model performs.
-
-Note : ~ $Loss\\ function/ Cost\\ Function$ or sometimes called $error\\ function$ all have the same meaning, or sometimes you hear the word PyTorch library $Criterion$**.**
-
-So the question is how we measure $\\ loss\\ function \\ ?$ In PyTorch, it’s made easy for us because so many great people write for us awsome $loss\\ function$ our job is just to use this tool and improve our $\\ model\\ accuracy \\ f(x)$. In this case, our label is $\\ y$ and our prediction is $\\ ŷ = f ( x )$ so our job is as deep learning practitioners to find the absolute difference between.
-
-Note ⭐ — One of the key points is to remember always try to decrease loss $\\ ℓ (ŷ , y)\\ = \\ \\downarrow$ not increase $ℓ (ŷ , y)\\ =\\ \\uparrow $ that means see below example.
-
-Wright way decrease loss $\\ ℓ (ŷ , y)\\ = \\ \\downarrow$ in model $\\downarrow$
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1694134397702/0ed452cb-b06c-4c85-bdc1-4d3a6a2ef4b1.png align="center")
 
 $$\ |y - ŷ| = 9 \downarrow$$
 
@@ -327,34 +311,15 @@ $$\ |y - ŷ| = 3 \downarrow$$
 
 $$\ |y - ŷ| = 1 \downarrow$$
 
-$$[]$$
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1694134523957/ace211a5-a94c-4458-b992-4ba8451031a5.png align="center")
 
-See below one more example,
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1694134661635/aec8829f-79d3-4270-8647-cc1d1018a00b.png align="center")
 
-This is not good for our model because it increases $\\ ℓ (ŷ , y)\\ =\\ \\uparrow $ our loss after some epoch. $\\uparrow$
+**Note ⭐**—To learn more about loss function read this article [***officially written by PyTorch***](https://pytorch.org/docs/stable/nn.html#loss-functions)***.***
 
-$$\ |y - ŷ| = 21 \downarrow$$
+### **Putting It Together — Training a Linear Regression Model**
 
-$$\ |y - ŷ| = 9 \downarrow$$
-
-$$\ |y - ŷ| = 13 \uparrow$$
-
-$$\ |y - ŷ| = 27 \uparrow$$
-
-$$[]$$
-
-Less is better — for our model $f( \\ x \\ )$, Here is the most commonly used loss function in regression problems!
-
-* $|y - ŷ|$ — ***torch.nn.L1Loss —*** *( mean absolute error (MAE) )*
-    
-* $(y - ŷ)^2$ — ***torch.nn.MSELoss — (*** *mean squared error* ***)***
-    
-
-$Note ⭐—$To learn more about loss function read this article [***officially written by PyTorch***](https://pytorch.org/docs/stable/nn.html#loss-functions)***.***
-
-## **Putting It Together — Training a Linear Regression Model**
-
-At this moment all thing we have created a linear regression dataset ( *SimpleRegressionDataset* ), training loop ( $simplenetwork (\\ )$ , loss function $ℓ$ ( $lossfunc$ ) and $\\ nn.Linear$ model. Now it's time to quickly train our model!🤖
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1694134835325/db2f4ff1-173d-4066-9af5-2b91c711d69e.png align="center")
 
 ```python
 input_features = 1 
@@ -369,7 +334,7 @@ simple_network(model, loss_func,training_loader, device=device)
 
 ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1693702104940/96f29af2-45ce-4f2b-a56b-e9a8f698f6c4.png align="center")
 
-Note 🔥: ~ If you don’t change runtime in $\\ GPU\\ $it shows an error, see below.
+Note 🔥: ~ If you don’t change runtime in **GPU** it shows an error, see below.
 
 ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1693702190861/fe1be92e-ce6f-42b6-aeca-0e3ff5c29c55.png align="center")
 
@@ -392,9 +357,9 @@ sns.lineplot(x=X, y=Y_pred.ravel(), color='red', label="Model");
 
 ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1693702339087/9c965feb-9072-4ba4-8473-735899fa5ac2.png align="center")
 
-Note :~ You can see the model I build it’s a really good prediction, but in the real world you don’t have this type of small dataset and easy problem. So below I show you how to handle large datasets in real-world problems so you can understand problems fast and solve them quickly!⚡
+Note : You can see the model I build it’s a really good prediction, but in the real world you don’t have this type of small dataset and easy problem. So below I show you how to handle large datasets in real-world problems so you can understand problems fast and solve them quickly.
 
-Hint ✨:~ Above you see I use [`torch.no`](http://torch.no)`_grad( )` predication time, you can also use `torch.inference_mode( )` . `torch.inference_mode( )` context manager is a newer, potentially faster alternative to [`torch.no`](http://torch.no)`_grad( )`. It is recommended to use `torch.inference_mode( )` when you are sure that your code will not need to interact with autograd. If you learn more see this [***Tweet from PyTorch***](https://twitter.com/PyTorch/status/1437838231505096708?s=20).
+Hint : Above you see I use [`torch.no`](http://torch.no)`_grad( )` predication time, you can also use `torch.inference_mode( )` . `torch.inference_mode( )` context manager is a newer, potentially faster alternative to [`torch.no`](http://torch.no)`_grad( )`. It is recommended to use `torch.inference_mode( )` when you are sure that your code will not need to interact with autograd. If you learn more see this [***Tweet from PyTorch***](https://twitter.com/PyTorch/status/1437838231505096708?s=20).
 
 Here is an example of how you use `inference_mode( )`
 
@@ -409,19 +374,17 @@ sns.lineplot(x=X, y=Y_pred.ravel(), color='red', label='Model') # <-- What our m
 
 ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1693702399424/6cdb6729-3fac-40b2-82e3-27f09be0b10a.png align="center")
 
-### Build Food Delivery Time Prediction Model
+### **Build Food Delivery Time Prediction Model**
 
-Check this [**food delivery time predication project**](https://hiwhy.io/food-delivery-time-prediction-using-deep-learning)
-
-**Exercise :** Download dataset and make some model share others.
+Check this [**food delivery time predication project**](https://hiwhy.io/food-delivery-time-prediction-using-deep-learning)**.**
 
 ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1693702454576/27eed722-6d1b-42e0-8e57-d16f8c62d8cf.png align="center")
 
 ## **How to Build a Neural Network from <s>Scratch</s>**
 
-At this moment you know how to build a **regression model** \*\*in PyTorch and what is behind the scenes in the **training loop**, now it’s time to build our fast fully connected neural network. Basic is the same all the time , no matter how complex the model is!
+At this moment you know how to build a **regression model** in PyTorch and what is behind the scenes in the **training loop**, now it’s time to build our fast fully connected neural network. Basic is the same all the time , no matter how complex the model is.
 
-Note💥 — When I say neural network or deep learning is mean $\\ layers\\ (... )$, Layers are building blocks we define our model $f( \\ x \\ )$. A modern framework like ***( PyTorch )*** is already implemented different layers for different purposes, which means you don’t need to worry about making layers, use your creativity and design your model . In PyTorch, most of the class layers have $( \\ torch. nn\\ )$ module **!.** When you use any layer in PyTorch , use this command to begin your notebook!
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1694135558430/e8ee1f80-bfda-4249-84eb-b78efab5c085.png align="center")
 
 ```python
 import torch
@@ -429,11 +392,9 @@ import torch.nn as nn
 import torch.nn.functional as F
 ```
 
-$$Myth \ [] \downarrow []$$
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1694135754283/4557f0ed-8941-4812-951a-5a625dce005b.png align="center")
 
-$$\frac{\partial J}{\partial \mathbf{W}^{(1)}}= \text{prod}\left(\frac{\partial J}{\partial \mathbf{z}}, \frac{\partial \mathbf{z}}{\partial \mathbf{W}^{(1)}}\right) + \text{prod}\left(\frac{\partial J}{\partial s}, \frac{\partial s}{\partial \mathbf{W}^{(1)}}\right)= \frac{\partial J}{\partial \mathbf{z}} \mathbf{x}^\top + \lambda \mathbf{W}^{(1)} \$$
-
-Myth 🔥 — Don’t need a math background to understand deep learning is wrong. Math is the foundation building block in deep learning research. No research comes in any field without using Math because it’s a 'Universal🪄' tool. So when someone says you don’t need math to understand this field, asked this type of person what is meaning 'Neural Network'?
+Myth — Don’t need a math background to understand deep learning is wrong. Math is the foundation building block in deep learning research. No research comes in any field without using Math because it’s a 'Universal🪄' tool. So when someone says you don’t need math to understand this field, asked this type of person what is meaning 'Neural Network'?
 
 ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1693702980249/8ef6e729-6fd1-452e-be5c-ddc9edd6b68a.png align="center")
 
@@ -441,9 +402,9 @@ Learning framework like ( PyTorch, TensorFlow, MxNeT, Jax etc.) or learning Neur
 
 ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1693703025253/e8d274b0-dab5-4024-a504-2707b23bd368.png align="center")
 
-## A Deep Dive into the Notation of Fully Connected Neural Networks
+### A Deep Dive into the Notation of Fully Connected Neural Networks
 
-Now you solid understand how to build **linear regression** model in PyTorch if not read again and download some data **Kaggle and build a 2-3 regression model** , this is my personal advice for learning anything new. Everything first time hard but after is easy!😰
+Now you solid understand how to build **linear regression** model in PyTorch if not read again and download some data **Kaggle and build a 2-3 regression model** , this is my personal advice for learning anything new. Everything first time hard but after is easy!
 
 > *The difference between a master and a beginner is that the master has failed more times than the beginner has even tried  — Stephen McCranie*
 
@@ -463,7 +424,7 @@ $$\begin{equation} y = f(x) = \sigma \left( \sum_{i=1}^n w_i x_i + b \right) \en
 </ul>
 </aside>
 
-Note :~ The name feed-forward because every output from one layer is connected to the other layer which means each layer has one input and one output and progresses sequentially. Fully Connected because each layer input has connected the previous layer. See the below image so you understand better.
+Note : The name feed-forward because every output from one layer is connected to the other layer which means each layer has one input and one output and progresses sequentially. Fully Connected because each layer input has connected the previous layer. See the below image so you understand better.
 
 ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1693703177133/d9732a02-7925-4366-a9db-cf989d6b264c.png align="center")
 
@@ -476,6 +437,10 @@ $$X \to \hat{Y}$$
 ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1693703238688/3e98782a-5cf7-4d0c-b146-c9c8a452d3c6.png align="center")
 
 To add a hidden layer to a model, we simply add another matrix between the input and output matrices. This matrix represents the weights of the connections between the neurons in the hidden layer and the neurons in the output layer.
+
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1694136230685/32b2d6f7-87f6-433e-8c21-eb391350046c.png align="center")
+
+### Progress
 
 $$f ( x ) = \mathbf{ x \ }^T W^d,^ C\$$
 
