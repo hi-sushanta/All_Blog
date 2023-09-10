@@ -5,6 +5,7 @@ cuid: clj80v2z2000j0al24erx7eoz
 slug: complete-deep-learning-guide
 canonical: https://hiwhy.io/deep-learning-guide/
 cover: https://cdn.hashnode.com/res/hashnode/image/upload/v1693616479461/20c8b46a-2fbd-496e-b9b0-756687b8ed43.png
+ogImage: https://cdn.hashnode.com/res/hashnode/image/upload/v1694308976262/da3ef57b-f48d-425c-b820-7d5df9c207d9.png
 tags: python, hashnode, deep-learning
 
 ---
@@ -62,25 +63,25 @@ Deep learning is a powerful technique to solve real-world tasks in a variety of 
 
 Before I write code let’s introduce some of the notation you must know meaning. I am showing you the most common notation that is used by almost all deep learning researchers in this field. This thing helps you understand the research paper easily.
 
-![](https://cdn.hashnode.com/res/hashnode/image/upload/v1694045769713/cf07710c-011f-4835-9129-5c28a7d9ced1.png align="left")
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1694308589993/e93ac7fd-cbcb-4a04-826f-72e4cbee0d2f.png align="left")
 
 $$ŷ = f ( x )$$
 
-![](https://cdn.hashnode.com/res/hashnode/image/upload/v1694046342560/8b6ade4a-430e-4a23-8045-f2c492c11c0e.png align="left")
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1694308554210/8964dd14-6a75-4dd1-be16-6d59042da78a.png align="left")
 
 $$ŷ = fΘ ( x )$$
 
 ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1693700228292/9733a3d2-9dc3-4180-b4d1-a705cda59372.png align="center")
 
-![](https://cdn.hashnode.com/res/hashnode/image/upload/v1694046440712/efac1917-4780-43c6-a9ff-0582d97a72d8.png align="left")
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1694308501463/3b654b3d-2ba1-4c69-81dd-2d2b8f085c9d.png align="left")
 
 $$p( ŷ|y) = ?$$
 
-![](https://cdn.hashnode.com/res/hashnode/image/upload/v1694046521416/135a45f0-36ea-4f77-b807-d1fbe9ae2b8c.png align="left")
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1694308276088/0af7f651-89b4-4273-bc18-8c1b132700b2.png align="left")
 
 Now you understand how to define a model ( ***neural network*** ), but we need one more tool to check how badly perform our model prediction truth value ***y***. Remember Our goal is to label *y* and predication ***ŷ*** how much distance\*. Let’s see one more example.
 
-![](https://cdn.hashnode.com/res/hashnode/image/upload/v1694047330510/c960236b-5861-4072-87d2-a51d8d5783c2.png align="left")
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1694308127375/c02e0f5f-e7bc-4932-9c7a-7df71e0fc46b.png align="left")
 
 $$loss\ function {\ (\ ŷ\ 🤖model\ predication - y\ label\ (Truth) }\ -🔍\ ℓ (ŷ , y)$$
 
@@ -105,13 +106,9 @@ def F(X, y, f, theta):
        return total_loss
 ```
 
-One thing you notice math describe long sentence, in short, that’s why deep learning researcher uses math to describe their paper. Don’t be confuse see this type of long equation paper, ***{ write down each equation small peace by peace and understand meaning }*.**
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1694307879663/44b1452e-e5c7-43e8-9041-049e2cf73da3.png align="center")
 
-![](https://cdn.hashnode.com/res/hashnode/image/upload/v1694048185347/943098fa-7bc1-42d2-9ef7-4899243666d4.png align="left")
-
-![](https://cdn.hashnode.com/res/hashnode/image/upload/v1694048267779/43fc77cf-e04e-41f4-a35d-990442378461.png align="left")
-
-![](https://cdn.hashnode.com/res/hashnode/image/upload/v1694048334156/da756059-7cb5-4ad6-af0a-69f2f2e89f96.png align="left")
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1694307824128/a36f6b60-3350-49ba-9f57-9ee4347db6fc.png align="left")
 
 $$\begin{equation} \Theta_{k+1} = \Theta_k - \eta \cdot \frac{1}{N} \sum_{i=1}^N \nabla_{\Theta_k} f_{\Theta_k}(x_i, y_i). \end{equation}$$
 
@@ -931,4 +928,86 @@ results_pd = simple_network(model, loss_func, training_loader, epochs=5,
                             score_funcs={'Acc':accuracy_score,'F1': f1_score})
 ```
 
-# Progress
+Now it's time to look at some results. First, let's see if we can load our checkpoint model instead of using the one we already trained. To load a model, we first need to create a new model that has all the same sub-modules as the original model. This is necessary so that the weights in the new model match the weights in the original model. For example, if the original model had 30 neurons in the second hidden layer, then the new model must also have 30 neurons in the second hidden layer. Otherwise, there will be too few or too many neurons, and an error will occur.
+
+One reason I use the ***torch.load*** and [***torch.save***](http://torch.save) functions because they provide a ***map\_location*** argument. This argument allows us to specify where the model should be loaded to. For example, if we are using a GPU, we can specify that the model should be loaded to the GPU. This can improve performance because the model will be able to run on the GPU instead of the CPU.
+
+Once we have loaded the dictionary of results, we can use the ***load\_state\_dict*** function to restore the states of our original model into the new object. This will essentially create a copy of the original model. Finally, we can apply the model to the data and see that we get the same results as we did with the original model.
+
+```python
+model_new = nn.Sequential(
+    nn.Linear(2,  30),
+    nn.Tanh(),
+    nn.Linear(30,  30),
+    nn.Tanh(),
+    nn.Linear(30, 2),
+)
+
+visualize2DSoftmax(X_test, y_test, model_new, title="Initial Model")
+plt.show()
+
+checkpoint_dict = torch.load('model.pt', map_location=device)
+
+
+model_new.load_state_dict(checkpoint_dict['model_state_dict'])
+
+visualize2DSoftmax(X_test, y_test, model_new, title="Loaded Model")
+plt.show()
+```
+
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1694305836172/7bccbd31-1156-42d7-bba5-7af70e6c2c37.png align="center")
+
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1694305865242/a3d8a573-a664-4e33-9075-f5d2c0119b86.png align="center")
+
+The initial model does not give very good predictions because it has not been trained yet. The weights of the model are random values, and they do not yet reflect the relationship between the input and output data. If you run the code several times, you will get slightly different results each time, because the weights of the model are randomly generated each time.
+
+After we load the previous model state into the ***model\_new,*** we get the nice crisp results we expect. This is because the previous model has been trained on a large dataset, and the weights of the model have been optimized to reflect the relationship between the input and output data.
+
+In other words, the initial model is not very good at making predictions because it does not have enough information. It does not know how the input data relates to the output data. The previous model, on the other hand, has been trained on a large dataset, and it has learned how to make predictions based on the input data.
+
+Our new training function returns a panda's DataFrame object with information about the model after every epoch. This information can be easily visualized, for example, by plotting the training and validation accuracy as a function of the epoch.
+
+Here is an example of how to plot the training and validation accuracy:
+
+```python
+sns.lineplot(x='epoch', y='train Acc', data=results_pd, label='Train')
+sns.lineplot(x='epoch', y='test Acc', data=results_pd, label='Validation')
+```
+
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1694306491565/7f1c0399-2146-44c6-909b-b0b1b286136b.png align="center")
+
+  
+As you can see, the training accuracy is increasing over time, and the validation accuracy is also increasing, but at a slower rate. This is a good sign, as it means that the model is not overfitting to the training data.
+
+You can also use the pandas DataFrame to get other information about the model, such as the loss and the number of epochs it took to train.
+
+### Predict Whether This Person Covid or Not
+
+Learning time simple datasets are useful but in the real world you don’t use this type of simple dataset train model. You need a large amount of datasets and powerful GPU to train the model. Check this [**Covid19 predication model**](https://hiwhy.io/covid-19-deep-learning-model) so you understand better.
+
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1694306599592/0fd62e3b-6066-4e13-8b87-922e3bb00a59.png align="center")
+
+### Here Are Some Model Improvement Techniques That You Can Use
+
+Note : This is all hyperparameters you can change to improve model performance. Don’t change so many things same time. Start one thing, see the result , then change another one.
+
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1694306804067/be2fc3e8-b106-45a5-9d5c-c4da0d794f8e.png align="center")
+
+### Learn Right Way
+
+I see many people just read and watch videos and train models using the hello world dataset MNIST, I don’t agree with this type of learning. Because in the real world, this type of dataset you not work and the simple problem does not require deep learning. Below I share some of the techniques you can use to learn, this is my personal advice it’s your choice to follow or not.
+
+* Learn the basic thing you need ( Suppose what is classification and how to build a classification model in PyTorch ). Don't focus on memorizing syntax.
+    
+* If the basic is complete now it’s time to Download a real-world dataset from [Kaggle](https://www.kaggle.com/) or another [competition website](https://www.drivendata.org/) and try to implement what you learn. I think this way you learn so much.
+    
+* Learn and implement —&gt; Suppose you read ( Activation function is important ) implement this and see what result you get. The more you practice this way more you understand better.
+    
+* Connect other great AI researchers, I found [Twitter,](https://twitter.com/hi_sushanta_) and [Linkedin](https://www.linkedin.com/in/sushanta-das-/) is the best place to connect with great people.
+    
+* Asked question Q , read { English | Math } convert code. **Q = E.M →C**
+    
+
+---
+
+Thanks for reading! I hope you found this article helpful. If you have any questions or suggestions, please don't hesitate to comment below. Your comment is important to me, I'm always happy to help people learn about deep learning.
